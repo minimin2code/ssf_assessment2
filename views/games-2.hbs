@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Game Search</title>
+    </head>
+    <body>
+        
+        {{#each games}}
+           <div>
+            <div>
+                Name: {{ this.name }}
+            </div>
+            <div>
+                Published: {{ this.year }}
+            </div>
+            <div>
+                Ranking: {{ this.ranking }}
+            </div>
+            <div>
+                Users Rated: {{ this.users_rated }}
+            </div>
+
+        
+                <form action="index.html"method="get">
+                <div>
+                    <input type="submit" value = "Back">
+                </div>
+                </form>
+            <!--
+            <div>
+                gid: {{ this.gid }}
+            </div>-->
+                <h4><b>Comments:</b></h4>
+            </div> 
+
+        {{/each}}
+        
+        
+        <h4><b>Comments:</b></h4>
+         {{#each comments}}
+            <div>
+                User: {{this.user}}
+            </div>
+            <br>
+            <div>
+                Rating: {{this.rating}}
+            </div>
+            <br>
+            <div>
+                {{this.c_text}}
+            </div>
+         {{/each}}
+         
+
+         <!--{{comments.c_text}}-->
+       
+>
+                 <table>
+            <tr>
+                <td>
+                    <form action="">
+                        <input type="hidden" value="{{prev_offset}}" name="offset">
+                        <button type="submit"> Prev </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                       <input type="hidden" value="{{next_offset}}" name="offset" >
+                        <button type="submit"> Next </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
